@@ -17,8 +17,8 @@ const poppins = Poppins({
 // });
 
 export const metadata: Metadata = {
-  title: "Arevei Projects",
-  description: "Showcasing open source project technologies on self hosted systems",
+  title: "Arevei Cloud",
+  description: "Turn your laptop into a private Google Drive — secure, unlimited, and completely yours.",
 };
 
 export default function RootLayout({
