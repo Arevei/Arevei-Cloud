@@ -29,6 +29,15 @@ export const Navbar = () => {
               </Button>
             </div>
           ) : null} */}
+
+
+         {isLanding ? (
+            <div className="flex items-center gap-4">
+              <Button asChild className="hero-gradient">
+                <Link href="/dashboard">Get Started</Link>
+              </Button>
+            </div>
+          ) : null}
         </div>
       </div>
     </nav>

@@ -1,8 +1,9 @@
+"use client"
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
+// import { supabase } from "@/integrations/supabase/client";
 import { Cloud, LogOut } from "lucide-react";
 import OnboardingFlow from "@/components/dashboard/OnboardingFlow";
 import InstanceOverview from "@/components/dashboard/InstanceOverview";
@@ -15,34 +16,34 @@ import CloudStorage from "@/components/dashboard/CloudStorage";
 import SharingSettings from "@/components/dashboard/SharingSettings";
 
 const Dashboard = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const { toast } = useToast();
   const [user, setUser] = useState<any>(null);
   const [setupComplete, setSetupComplete] = useState(false);
 
-  useEffect(() => {
-    // Check authentication
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      if (!session) {
-        navigate("/login");
-      } else {
-        setUser(session.user);
-      }
-    });
+  // useEffect(() => {
+  //   // Check authentication
+  //   supabase.auth.getSession().then(({ data: { session } }) => {
+  //     if (!session) {
+  //       navigate("/login");
+  //     } else {
+  //       setUser(session.user);
+  //     }
+  //   });
 
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
-      if (event === "SIGNED_OUT" || !session) {
-        navigate("/login");
-      } else {
-        setUser(session.user);
-      }
-    });
+  //   const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+  //     if (event === "SIGNED_OUT" || !session) {
+  //       navigate("/login");
+  //     } else {
+  //       setUser(session.user);
+  //     }
+  //   });
 
-    return () => subscription.unsubscribe();
-  }, [navigate]);
+  //   return () => subscription.unsubscribe();
+  // }, [navigate]);
 
   const handleLogout = async () => {
-    await supabase.auth.signOut();
+    // await supabase.auth.signOut();
     toast({
       title: "Logged out",
       description: "See you next time!",
