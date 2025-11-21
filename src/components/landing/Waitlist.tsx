@@ -37,7 +37,8 @@ export const Waitlist = () => {
               message: formData.message,
               timestamp: new Date().toLocaleString(),
             },
-          ],
+          ],    
+          sheet: "WaitList",
         }),
       });
 
